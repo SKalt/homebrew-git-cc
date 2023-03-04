@@ -5,23 +5,23 @@
 class GitCc < Formula
   desc "A git extension to help write conventional commits."
   homepage "https://github.com/skalt/git-cc"
-  version "0.0.15"
+  version "0.0.16"
   license "Indie Code Catalog Standard Deal >= 4.1"
 
   depends_on "git"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/SKalt/git-cc/releases/download/v0.0.15/git-cc_0.0.15_darwin_amd64.tar.gz", using: CurlDownloadStrategy
-      sha256 "0526f93558003284101264be10dc5102bf9d52bb65e3dabddafc01a4d03fedcf"
+    if Hardware::CPU.arm?
+      url "https://github.com/SKalt/git-cc/releases/download/v0.0.16/git-cc_0.0.16_darwin_arm64.tar.gz", using: CurlDownloadStrategy
+      sha256 "9bf3f0249e37c67541c77eb3d2ba13274dc9be999b5a31536a86aa85703c495c"
 
       def install
         bin.install "git-cc"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/SKalt/git-cc/releases/download/v0.0.15/git-cc_0.0.15_darwin_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "9ccf602c0b4e8795446114952025c2d8ec6b21f78f344a75143944d583fd1a8f"
+    if Hardware::CPU.intel?
+      url "https://github.com/SKalt/git-cc/releases/download/v0.0.16/git-cc_0.0.16_darwin_amd64.tar.gz", using: CurlDownloadStrategy
+      sha256 "b70b21b42f022d3fa17de932e0ff5ec1cb2e20b18165bbed6e239ade23e4998b"
 
       def install
         bin.install "git-cc"
@@ -31,16 +31,16 @@ class GitCc < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/SKalt/git-cc/releases/download/v0.0.15/git-cc_0.0.15_linux_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "b72e869716240e362aec7376a90dfcb6cd8b9abb950f0b0ec6157372a9fa93a2"
+      url "https://github.com/SKalt/git-cc/releases/download/v0.0.16/git-cc_0.0.16_linux_arm64.tar.gz", using: CurlDownloadStrategy
+      sha256 "4cf28f3ceb2c5bdee1e294241df4bc038e3ab907be1885308b97b5810139690c"
 
       def install
         bin.install "git-cc"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/SKalt/git-cc/releases/download/v0.0.15/git-cc_0.0.15_linux_amd64.tar.gz", using: CurlDownloadStrategy
-      sha256 "87a3082227c6139e2369d0d5796b1eb2c03371b9f243689889840d4c0c34a948"
+      url "https://github.com/SKalt/git-cc/releases/download/v0.0.16/git-cc_0.0.16_linux_amd64.tar.gz", using: CurlDownloadStrategy
+      sha256 "98442e0d487a7383969ec0f62690fe00ecd49181db3f3ae277621f1b84302ca5"
 
       def install
         bin.install "git-cc"
